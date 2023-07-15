@@ -25,7 +25,7 @@ function App() {
     const winningCondition = [
       [0,1,2], [3,4,5], [6,7,8],
       [0,3,6], [1,4,7], [2,5,8],
-      [0,4,6],[2,4,8]
+      [0,4,8],[2,4,6]
     ]
       winningCondition.forEach(array => {
         let xwins = array.every(cell => cells[cell] === "x")
@@ -60,7 +60,7 @@ function App() {
     <div className="App">
       <p className = {`message  ${!xplaying ? "xscore" : "oscore"}`}>{winingMessage || message}</p>
       <Dashboard winingMessage={winingMessage} xplaying={xplaying}/>
-      <Board board={cells} onClick={winingMessage === null && handleClick}/>  
+      <Board board={cells} onClick={winingMessage === null ? handleClick : checkWinner}/>  
       
       {winingMessage ? 
       <button className="play-again" onClick={gameOver}>Play Again</button> : 
