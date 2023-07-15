@@ -41,7 +41,7 @@ function App() {
           return
         }
       })
-  }
+    }
 
     useEffect(() => {
         checkWinner()
@@ -52,7 +52,6 @@ function App() {
       setCells(Array(9).fill(null))
       setWiningMessage(null)
     }
-
 
     const message = xplaying ? "X plays next" : "O plays next"
 
